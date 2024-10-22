@@ -95,7 +95,12 @@ for line in lines:
     driver.find_element(By.XPATH, "//span[normalize-space()='Submit']").click()
         #EOC
     driver.find_element(By.XPATH, "//div[@id='PersonalHistory']//div[@id='panel1bh-header']//span[@class='MuiIconButton-label']//*[name()='svg']").click()
-    driver.find_element(By.XPATH, "//input[@id='select-1']").send_keys("Sagar Jadhav")
+   # driver.find_element(By.XPATH, "//input[@id='select-1']").click()
+    driver.find_element(By.XPATH, "//input[@id='select-1']").click()
+    action = webdriver.ActionChains(driver)
+    action.send_keys(Keys.ARROW_UP).perform()
+    action.send_keys(Keys.ENTER).perform()
+
     #driver.find_element(By.XPATH, "(//input[@id='select-1'])[1]").click()
     driver.implicitly_wait(10)
     driver.find_element(By.XPATH, "(//span[@class='MuiButton-label'][normalize-space()='Submit'])[2]").click()
