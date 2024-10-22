@@ -64,9 +64,11 @@ for line in lines:
 
 
     driver.find_element(By.XPATH, "//input[@placeholder='Select Dose']").send_keys("1")
+    time.sleep(1)
     action = webdriver.ActionChains(driver)
     action.send_keys(Keys.ARROW_DOWN).perform()
     action.send_keys(Keys.ENTER).perform()
+    driver.find_element(By.XPATH,"//p[normalize-space()='Partially Vaccinated']").click()
     driver.find_element(By.XPATH, "//span[normalize-space()='Submit']").click()
     driver.refresh()
 
